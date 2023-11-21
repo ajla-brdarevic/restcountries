@@ -42,3 +42,14 @@ body {
     width: 40%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.error-popup{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    text-align: center;
+    width: 40%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
