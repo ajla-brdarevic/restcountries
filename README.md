@@ -31,7 +31,8 @@ This is a simple application that displays informations about countires. The bac
 4. Run the application:
    npm start
 
-5. Open your browser and visit http://localhost:3000 to see the Weather App.
+5. Open your browser and visit http://localhost:3000 to see the REST Countries.
 
 ## Acknowledgments
+REST Countries API - https://restcountries.com
 Background images from [IStock](https://www.istockphoto.com/)https://www.istockphoto.com/
