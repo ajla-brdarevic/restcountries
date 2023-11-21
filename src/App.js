@@ -41,32 +41,31 @@ const App = () => {
         </div>
       </header>
       <div className='container'>
-        <div className='image'>
-          {selectedCountry && (
-            <img
-              src={selectedCountry.flags.png}
-              alt={`Flag of ${selectedCountry.name.common}`}
-            />
-          )}
-        </div>
-        {searchResults.map((country) => (
-          <div key={country.name.common} onClick={() => setSelectedCountry(country)}>
-            <h2>{country.name.common}</h2>
-            <p>Official Name: {country.name.official}</p>
-            <p>Capital: {country.capital[0]}</p>
-            <p>Population: {country.population.toLocaleString()}</p>
-            <p>Area: {country.area.toLocaleString()} km²</p>
-            <p>Density: {(country.population / country.area).toFixed(2)} people/km²</p>
-            <p>Region: {country.region}, {country.subregion}</p>
-            <p>Web domen: {country.tld}</p>
-            <p>Car Code: {selectedCountry.cca2} (right-hand traffic)</p>
-            <p>Independence: {selectedCountry.independent ? 'Yes' : 'No'}</p>
-            <p>Status: {selectedCountry.status}</p>
-            <p>UN Member: {selectedCountry.unMember ? 'Yes' : 'No'}</p>
-            <p>Currency: {Object.values(selectedCountry.currencies)[0].name} ({Object.values(selectedCountry.currencies)[0].symbol})</p>
-          </div>
-        ))}
-      </div>
+  <div className='image'>
+    {selectedCountry && (
+      <img
+        src={selectedCountry.flags.png}
+        alt={`Flag of ${selectedCountry.name.common}`}
+      />
+    )}
+  </div>
+  {selectedCountry && (
+    <div key={selectedCountry.name.common}>
+      <h2>{selectedCountry.name.official}</h2>
+      <p><b>Capital: </b>{selectedCountry.capital[0]}</p>
+      <p><b>Population: </b>{selectedCountry.population.toLocaleString()}</p>
+      <p><b>Area: </b>{selectedCountry.area.toLocaleString()} km²</p>
+      <p><b>Density: </b>{(selectedCountry.population / selectedCountry.area).toFixed(2)} people/km²</p>
+      <p><b>Region: </b>{selectedCountry.region}, {selectedCountry.subregion}</p>
+      <p><b>Web domen: </b>{selectedCountry.tld}</p>
+      <p><b>Car Code: </b>{selectedCountry.cca2} (right-hand traffic)</p>
+      <p><b>Independence: </b>{selectedCountry.independent ? 'Yes' : 'No'}</p>
+      <p><b>UN Member: </b>{selectedCountry.unMember ? 'Yes' : 'No'}</p>
+      <p><b>Currency: </b>{Object.values(selectedCountry.currencies)[0].name} ({Object.values(selectedCountry.currencies)[0].symbol})</p>
+    </div>
+  )}
+</div>
+
     </div>
   );
 };

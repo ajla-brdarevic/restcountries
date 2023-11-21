@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #F4F0BB;
+    background-color: #EADEDA;
     font-family: 'Catamaran', sans-serif;
 }
 
@@ -32,13 +32,11 @@ body {
 }
 
 .container {
-    border: 5px solid;
     position: absolute;
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 10px;
     text-align: center;
-    background-color: white;
-    width: 70%;
+    width: 40%;
 }
