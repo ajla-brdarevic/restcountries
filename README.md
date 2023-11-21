@@ -1,6 +1,6 @@
 # REST Countries
 
-This is a simple application that displays informations about countires. The background image changes based on the region of the countrie. Video - https://youtu.be/6HjoYOA1XaQ
+This is a simple application that displays informations about countires. The background image changes based on the region of the countrie. Video - https://youtu.be/0Q8MoiHk56g
 
 ## Features
 
