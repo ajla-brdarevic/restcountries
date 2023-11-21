@@ -1,12 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
+
+import Europa from './assets/europebg.webp';
+import Asia from './assets/asiabg.jpg';
+import Africa from './assets/africabg.jpg';
+import Australia from './assets/australiabg.jpg';
+import Antartica from './assets/antarticabg.jpg';
+import Americas from './assets/americasbg.jpg';
+import WorldMap from './assets/worldbg.jpg';
+
+const background = {
+  'Europe': Europa,
+  'Asia': Asia,
+  'Africa': Africa,
+  'Oceania': Australia,
+  'Antartica': Antartica,
+  'Americas': Americas,
+};
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [errorMessage, setErrorMessage] = useState('');
+  const [currentBackground, setCurrentBackground] = useState(WorldMap);
+
+
+  const setRegionBackground = (region) => {
+    const backgroundURL = background[region] || WorldMap;
+    document.body.style.backgroundImage = `url(${backgroundURL})`;
+    document.body.style.backgroundRepeat = 'no-repeat'; 
+    document.body.style.backgroundSize = 'cover'; 
+  };
+
+  useEffect(() => {
+    document.body.style.backgroundImage = `url(${WorldMap})`;
+    document.body.style.backgroundRepeat = 'no-repeat'; 
+    document.body.style.backgroundSize = 'cover'; 
+  }, []);
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
@@ -21,7 +53,8 @@ const App = () => {
       setSearchResults(countries);
       if (countries.length > 0) {
         setSelectedCountry(countries[0]);
-        setErrorMessage(''); // Očisti prethodnu grešku ako je bila prikazana
+        setRegionBackground(countries[0].region);
+        setErrorMessage('');
       } else {
         setErrorMessage('Country not found');
       }

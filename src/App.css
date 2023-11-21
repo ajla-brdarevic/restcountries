@@ -5,7 +5,6 @@
 }
 
 body {
-    background-color: #EADEDA;
     font-family: 'Catamaran', sans-serif;
 }
 
@@ -33,6 +32,7 @@ body {
 }
 
 .container {
+    background-color: #EADEDA;
     position: absolute;
     top: 60%;
     left: 50%;
